@@ -8,8 +8,8 @@ from markdown import Markdown
 
 def main():
     
-    f = open(sys.argv[1])
-    board = json.load(f)
+    with open(sys.argv[1]) as f:
+        board = json.load(f)
 
     labels = {lab['id']: lab for lab in board['labels']}
     members = {mem['id']: mem for mem in board['members']}
@@ -67,13 +67,13 @@ def main():
                         h4("Activity")
 
 
-
-    print(doc)
+    with open(sys.argv[2], 'w') as outfile:
+        outfile.write(str(doc))
 
 if __name__ == '__main__':
 
-    if len(sys.argv) == 2:
+    if len(sys.argv) == 3:
         main()
     else:
-        print("Usage: ", sys.argv[0], "<Trello JSON File>")
+        print("Usage: ", sys.argv[0], "[Trello JSON File] [Output File]")
         sys.exit(2)

@@ -13,7 +13,7 @@
     <LaunchProvider>Standard Python launcher</LaunchProvider>
     <InterpreterId />
     <InterpreterVersion />
-    <CommandLineArguments>trello.json</CommandLineArguments>
+    <CommandLineArguments>trello.json trello.html</CommandLineArguments>
     <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
