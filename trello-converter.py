@@ -9,7 +9,7 @@ from markdown import Markdown
 
 def main():
     
-    with open(sys.argv[1]) as f:
+    with open(sys.argv[1], encoding='utf-8') as f:
         board = json.load(f)
 
     # Build indexes into the JSON structure.
@@ -114,7 +114,7 @@ def main():
                 hr()
 
 
-    with open(sys.argv[2], 'w') as outfile:
+    with open(sys.argv[2], 'w', encoding='utf-8') as outfile:
         outfile.write(str(doc))
 
 if __name__ == '__main__':
